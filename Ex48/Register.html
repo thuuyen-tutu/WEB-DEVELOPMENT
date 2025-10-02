@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ex 48 - Nguyễn Dương Thu Uyên</title>
+    <meta charset="utf-8">
+    <title>Register - Jackson Electronics</title>
+    <style>
+        body {
+            background-color: #cce6ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 600px;
+            margin: 20px auto;
+            background-color: #99ccff;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        h1 {
+            text-align: center;
+            background-color: cyan;
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jackson Electronics</h1>
+        <h2 style="text-align:center;">Registration Form</h2>
+        <p style="text-align:center;">Register your Jackson Electronics product here</p>
+        
+        <form>
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="firstname"></td>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="lastname"></td>
+                </tr>
+                <tr>
+                    <td>Address #1:</td>
+                    <td colspan="3"><input type="text" name="address1" size="50"></td>
+                </tr>
+                <tr>
+                    <td>Address #2:</td>
+                    <td colspan="3"><input type="text" name="address2" size="50"></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td><input type="text" name="city"></td>
+                    <td>State:</td>
+                    <td><input type="text" name="state" size="5"> Zip: <input type="text" name="zip" size="7"></td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td colspan="3">
+                        <select name="country">
+                            <option>United States</option>
+                            <option>Vietnam</option>
+                            <option>Japan</option>
+                            <option>Other</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <table>
+                <tr>
+                    <td>Product:</td>
+                    <td><select name="product">
+                        <option>ScanMaster</option>
+                        <option>Printer</option>
+                        <option>Monitor</option>
+                        <option>Laptop</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Date Purchased:</td>
+                    <td><input type="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td>Serial #:</td>
+                    <td><input type="text" name="serial"></td>
+                </tr>
+                <tr>
+                    <td>Used for:</td>
+                    <td>
+                        <input type="radio" name="usedfor" value="home"> Home
+                        <input type="radio" name="usedfor" value="business"> Business
+                        <input type="radio" name="usedfor" value="gov"> Government
+                        <input type="radio" name="usedfor" value="edu"> Educational Institution
+                        <input type="radio" name="usedfor" value="other"> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>System (check all that apply):</td>
+                    <td>
+                        <input type="checkbox" name="system" value="windows"> Windows
+                        <input type="checkbox" name="system" value="mac"> Macintosh
+                        <input type="checkbox" name="system" value="unix"> UNIX
+                        <input type="checkbox" name="system" value="other"> Other
+                    </td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <p>Comments?:</p>
+            <textarea name="comments"></textarea>
+
+            <div class="buttons">
+                <input type="button" value="Click to register" onclick="registerAlert()">
+                <input type="reset" value="Click to cancel">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
