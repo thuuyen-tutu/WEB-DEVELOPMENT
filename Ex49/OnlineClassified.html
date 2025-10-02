@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ex 49 - Nguyễn Dương Thu Uyên</title>
+    <meta charset="UTF-8">
+    <title>Online Classifieds Search Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0F7FA;
+        }
+        .container {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #CCFFFF;
+            border: 1px solid #999;
+        }
+        h2 {
+            color: red;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .buttons img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Online Classifieds Search Form</h2>
+    <form id="classifiedForm">
+        <!-- 1. Radio buttons -->
+        <div class="section">
+            <b>1) Search for a classified in the following sections:</b><br>
+            <input type="radio" name="section" value="employment"> Employment
+            <input type="radio" name="section" value="personal"> Personal
+            <input type="radio" name="section" value="forsale"> For Sale
+            <input type="radio" name="section" value="misc"> Miscellaneous
+            <input type="radio" name="section" value="housing"> Housing
+            <input type="radio" name="section" value="all"> All of the above
+        </div>
+
+        <!-- 2. Checkboxes -->
+        <div class="section">
+            <b>2) Search the following publications:</b><br>
+            <input type="checkbox" name="pub" value="midwest"> Midwest Times
+            <input type="checkbox" name="pub" value="modern"> Modern News
+            <input type="checkbox" name="pub" value="employment"> Employment Today<br>
+            <input type="checkbox" name="pub" value="greatlakes"> Great Lakes Classifieds
+            <input type="checkbox" name="pub" value="middleton"> Middleton Daily
+            <input type="checkbox" name="pub" value="cashtown"> Cashtown Daily News
+        </div>
+
+        <!-- 3. Date -->
+        <div class="section">
+            <b>3) From</b>
+            <input type="date" name="from">
+            <b>to</b>
+            <input type="date" name="to">
+        </div>
+
+        <!-- 4. Keywords -->
+        <div class="section">
+            <b>4) Enter a few keywords to describe the classified.</b><br>
+            <input type="text" name="keywords" style="width:100%;">
+        </div>
+
+        <!-- 5. Buttons -->
+        <div class="section">
+            <b>5) Click one of the options below:</b><br><br>
+            <div class="buttons">
+                <img src="Search.gif" alt="Search" title="Search" onclick="doSearch()">
+                <img src="Help.gif" alt="Help" title="Help" onclick="openHelp()">
+                <img src="Cancel.gif" alt="Cancel" title="Cancel" onclick="doCancel()">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function doSearch() {
+        alert("Searching...");
+    }
+    function openHelp() {
+        window.open("https://support.google.com/", "_blank");
+    }
+    function doCancel() {
+        document.getElementById("classifiedForm").reset();
+    }
+</script>
+
+</body>
+</html>
