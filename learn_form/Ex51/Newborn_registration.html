@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ex 51 - Nguyễn Dương Thu Uyên</title>
+  <meta charset="UTF-8">
+  <title>Newborn Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 600px;
+      background-color: teal;
+      color: white;
+      margin: 40px auto;
+      padding: 20px 40px;
+      border: 4px solid blue;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      text-align: center;
+      color: orange;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: inline-block;
+      width: 160px;
+      margin-top: 5px;
+      color: white;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"] {
+      width: 180px;
+      padding: 4px;
+      margin-top: 5px;
+    }
+
+    .half {
+      width: 120px;
+    }
+
+    textarea {
+      width: 90%;
+      height: 60px;
+    }
+
+    select, option {
+      width: 220px;
+      margin-top: 5px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .buttons input {
+      padding: 6px 14px;
+      margin: 5px;
+    }
+
+    .hospital-subtitle {
+      text-align: center;
+      color: yellow;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    hr {
+      border: 1px solid orange;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>St. Mary's of Northland Pines</h1>
+    <div class="hospital-subtitle">Research Hospital and Clinics</div>
+    <hr>
+    <h2>Newborn Registration</h2>
+
+    <form>
+      <label>Date:</label>
+      <input type="date"><br>
+
+      <label>1) Infant’s first name:</label>
+      <input type="text">
+      <label>Last:</label>
+      <input type="text"><br>
+
+      <label>2) Medical Record #:</label>
+      <input type="text"><br>
+
+      <label>3) Date of birth:</label>
+      <input type="date"><br>
+
+      <label>4) Birth weight:</label>
+      <input type="text"><br>
+
+      <label>5) APGAR score:</label>
+      <input type="number" min="0" max="10"><br>
+
+      <label>6) Mother’s first name:</label>
+      <input type="text">
+      <label>Last:</label>
+      <input type="text"><br>
+
+      <label>7) Father’s first name:</label>
+      <input type="text">
+      <label>Last:</label>
+      <input type="text"><br>
+
+      <label>8) Physician (check all that apply):</label><br>
+      <select name="physician" multiple size="4">
+        <option>Dr. Warren Albert</option>
+        <option>Dr. Maria Alvarez</option>
+        <option>Dr. Karen Brinkman</option>
+        <option>Dr. Michael Kerry</option>
+      </select><br>
+
+      <div class="buttons">
+        <input type="submit" value="Register">
+        <input type="reset" value="Cancel">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
