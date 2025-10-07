@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>First Degree</title>
+        <script>
+            function giai()
+            { //alert("Bạn muốn giải phương trình bậc 1")
+                hsa=frm_first_degree.hsa.value
+                hsb=frm_first_degree.hsb.value
+                frm_first_degree.result.value= -hsb/hsa
+            }
+            function mo_web_khoa()
+            {
+                window.open("https://is.uel.edu.vn","_blank")
+            }
+        </script>
+    </head>
+    <body>
+        <form name="frm_first_degree">
+        
+        <table>
+            <tr>
+                <td>A:</td>
+                <td><input type="text" name="hsa" id="hsa" /></td>
+            </tr>
+            <tr>
+                <td>B:</td>
+                <td><input type="text" name="hsb" id="hsb" /></td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td><input type="text" name="result" id="result" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                        <input type="submit" value="Giải" />  
+                        <input type="reset" value="Làm lại" /> 
+                        <input type="button" value="Mở web khoa" onclick="mo_web_khoa()" /> 
+                </td>
+            </tr>
+        </table>
+        </form> 
+    </body>
+</html>
