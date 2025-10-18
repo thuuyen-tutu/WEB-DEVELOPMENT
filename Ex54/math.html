@@ -1,0 +1,74 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math Functions - NDTU </title>
+	<link rel="stylesheet" href="mainstyle.css">
+	<script>
+		function getValues() {
+			let a = parseFloat(document.getElementById("a").value);
+			let b = parseFloat(document.getElementById("b").value);
+			let c = parseFloat(document.getElementById("c").value);
+			return { a, b, c };
+		}
+
+		function showResult(value) {
+			document.getElementById("result").value = value;
+		}
+
+		function findMax() {
+			let { a, b, c } = getValues();
+			showResult(Math.max(a, b, c));
+		}
+
+		function findMin() {
+			let { a, b, c } = getValues();
+			showResult(Math.min(a, b, c));
+		}
+
+		function sinA() {
+			let { a } = getValues();
+			showResult(Math.sin(a * Math.PI / 180)); // đổi độ sang radian
+		}
+
+		function cosA() {
+			let { a } = getValues();
+			showResult(Math.cos(a * Math.PI / 180));
+		}
+
+		function powAB() {
+			let { a, b } = getValues();
+			showResult(Math.pow(a, b));
+		}
+	</script>
+</head>
+<body>
+	<table border="1" cellspacing="0" cellpadding="6">
+		<tr>
+			<td>a:</td>
+			<td><input type="text" id="a" value=""></td>
+		</tr>
+		<tr>
+			<td>b:</td>
+			<td><input type="text" id="b" value=""></td>
+		</tr>
+		<tr>
+			<td>c:</td>
+			<td><input type="text" id="c" value=""></td>
+		</tr>
+		<tr>
+			<td>Result:</td>
+			<td><input type="text" id="result" readonly></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" value="MAX" onclick="findMax()">
+				<input type="button" value="MIN" onclick="findMin()">
+				<input type="button" value="sin(a)" onclick="sinA()">
+				<input type="button" value="Cos(a)" onclick="cosA()">
+				<input type="button" value="a^b" onclick="powAB()">
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

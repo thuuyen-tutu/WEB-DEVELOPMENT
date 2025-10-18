@@ -1,0 +1,28 @@
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 260px;
+}
+
+td {
+	padding: 6px 10px;
+}
+
+input[type="text"] {
+	width: 150px;
+	padding: 3px;
+	border: 1px solid #999;
+}
+
+input[type="button"] {
+	padding: 5px 10px;
+	margin: 4px 2px;
+	cursor: pointer;
+	font-weight: bold;
+	border: 1px solid #888;
+	background-color: #f6b800;
+}
+
+input[type="button"]:hover {
+	background-color: #ffcb22;
+}
