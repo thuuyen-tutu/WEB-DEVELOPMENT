@@ -1,0 +1,21 @@
+
+<html>
+<head>
+    <title>Contact Result - NDTU </title>
+</head>
+<body>
+    <h2>Message received</h2>
+
+    <script>
+        // Lấy query string từ URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Hiển thị dữ liệu
+        document.write("<p><b>Full name:</b> " + params.get("fullname") + "</p>");
+        document.write("<p><b>Email:</b> " + params.get("email") + "</p>");
+        document.write("<p><b>Send to:</b> " + params.get("sendto") + "</p>");
+        document.write("<p><b>Title:</b> " + params.get("title") + "</p>");
+        document.write("<p><b>Content:</b> " + params.get("content") + "</p>");
+    </script>
+</body>
+</html>
