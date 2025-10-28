@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin Kinh Doanh Hôm Nay - VnExpress</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+
+    #feed {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 10px;
+    }
+
+    .item {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.01);
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      padding: 15px 20px;
+    }
+
+    .title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #003366;
+      text-decoration: none;
+    }
+
+    .title:hover {
+      color: #0078ff;
+    }
+
+    .description {
+      margin: 10px 0;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .date {
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    #reload {
+      display: block;
+      background-color: #0078ff;
+      color: white;
+      text-align: center;
+      border: none;
+      padding: 10px 20px;
+      margin: 20px auto;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #reload:hover {
+      background-color: #005fcc;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Tin Kinh Doanh Hôm Nay (VnExpress)</header>
+  <button id="reload">🔄 Tải lại tin mới nhất</button>
+  <div id="feed">Đang tải tin tức...</div>
+
+  <script>
+    async function loadRSS() {
+      const rssUrl = "https://vnexpress.net/rss/kinh-doanh.rss";
+      const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(rssUrl);
+
+      document.getElementById("feed").innerHTML = "⏳ Đang tải dữ liệu, vui lòng chờ...";
+
+      try {
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        const xmlText = data.contents;
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlText, "text/xml");
+        const items = xml.querySelectorAll("item");
+
+        let html = "";
+        items.forEach(item => {
+          const title = item.querySelector("title")?.textContent || "";
+          const link = item.querySelector("link")?.textContent || "";
+          const description = item.querySelector("description")?.textContent || "";
+          const pubDate = item.querySelector("pubDate")?.textContent || "";
+          const img = item.querySelector("enclosure")?.getAttribute("url") || "";
+
+          // Chỉ hiển thị tin đăng trong 3 ngày gần nhất
+          const pub = new Date(pubDate);
+          const now = new Date();
+          const diff = (now - pub) / (1000 * 60 * 60 * 24);
+          if (diff > 3) return;
+
+          html += `
+            <div class="item">
+              ${img ? `<img src="${img}" alt="Ảnh tin tức">` : ""}
+              <div class="content">
+                <a href="${link}" target="_blank" class="title">${title}</a>
+                <p class="description">${description.replace(/<[^>]+>/g, '')}</p>
+                <p class="date">🕒 ${new Date(pubDate).toLocaleString("vi-VN")}</p>
+              </div>
+            </div>
+          `;
+        });
+
+        document.getElementById("feed").innerHTML = html || "Không có tin mới trong 3 ngày gần đây.";
+      } catch (err) {
+        console.error("Lỗi khi tải RSS:", err);
+        document.getElementById("feed").innerHTML =
+          "❌ Không thể tải RSS. Kiểm tra kết nối hoặc thử lại.";
+      }
+    }
+
+    document.getElementById("reload").addEventListener("click", loadRSS);
+    loadRSS();
+  </script>
+</body>
+</html>
