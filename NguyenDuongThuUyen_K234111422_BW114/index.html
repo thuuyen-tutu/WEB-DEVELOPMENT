@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwi Company - Mid-term Exam</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <div class="logo"><i class="fas fa-kiwi-bird"></i> Kiwi Company</div>
+        <nav class="top-nav">
+          <ul>
+            <li>
+              <a href="#" data-page="about" class="active"
+                ><i class="fas fa-user"></i> About me</a
+              >
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle"
+                ><i class="fas fa-code"></i> Form & Javascript
+                <i class="fas fa-caret-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-page="products"
+                    ><i class="fas fa-box"></i> Products</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-page="employees"
+                    ><i class="fas fa-users"></i> Employees</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle"
+                ><i class="fas fa-globe"></i> API and External
+                <i class="fas fa-caret-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" data-page="weather"
+                    ><i class="fas fa-cloud-sun"></i> Weather API</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-page="rss"><i class="fas fa-rss"></i> RSS</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" data-page="login"
+                ><i class="fas fa-sign-in-alt"></i>
+                <span id="login-text">Login</span>/Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <nav class="sidebar-nav" id="part-b">
+        <h3>Vietlott Jackpot (Q8)</h3>
+        <div class="vietlott-section">
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="lottery" value="mega645" checked />
+              Mega 6/45
+            </label>
+            <label>
+              <input type="radio" name="lottery" value="power655" />
+              Power 6/55
+            </label>
+          </div>
+          <div id="lottery-result">
+            <p>Select lottery type to see results...</p>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main-content" id="part-c"></main>
+
+      <aside class="right-sidebar" id="part-d">
+        <div class="card">
+          <h3>Declaration</h3>
+          <div class="marquee-container">
+            <marquee
+              direction="down"
+              scrollamount="3"
+              behavior="scroll"
+              loop="infinite"
+              height="400"
+            >
+              I declare that all of these solutions are my own work and not
+              copied from anyone in this class
+            </marquee>
+          </div>
+        </div>
+      </aside>
+
+      <footer class="footer" id="part-e">
+        <p id="designer-info">Designed by Student XYZ, today is ABC</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
